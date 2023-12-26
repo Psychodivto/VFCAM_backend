@@ -11,7 +11,7 @@ from django.dispatch import receiver
 
 class Userprofile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    foto_perfil = models.ImageField(upload_to='foto_perfil', blank=True, null=True)
+    foto_perfil = models.ImageField(upload_to='/images', blank=True, null=True)
     telefono = models.CharField(max_length=15, blank=True, null=True)
     direccion = models.CharField(max_length=100, blank=True, null=True)
     google_id = models.CharField(max_length=100, blank=True, null=True)
@@ -44,3 +44,5 @@ class Question(models.Model):
 
     def __str__(self):
         return self.nombre
+
+        
